@@ -6,7 +6,7 @@
 ![Landing page](frontend/public/landingpage.png)
 
 ### Chat view
-![Chat view](frontend/public/screenshots/chat.png)
+![Chat view](frontend/public/chatsection.png)
 
 
 
