@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Simple-ChatApp/static/css/main.40caa1d2.css",
+    "main.js": "/Simple-ChatApp/static/js/main.266ad958.js",
+    "index.html": "/Simple-ChatApp/index.html",
+    "main.40caa1d2.css.map": "/Simple-ChatApp/static/css/main.40caa1d2.css.map",
+    "main.266ad958.js.map": "/Simple-ChatApp/static/js/main.266ad958.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.40caa1d2.css",
+    "static/js/main.266ad958.js"
+  ]
+}
