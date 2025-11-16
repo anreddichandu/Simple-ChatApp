@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap");
+
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150,150,150,0.3);
+  border-radius: 6px;
+}
+
+
+.chat-fade {
+  animation: fadeIn 0.25s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+.msg-bubble {
+  max-width: 75%;
+  padding: .7rem 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 8px;
+}
+
+.msg-user {
+  background: #3b82f6;
+  color: white;
+  margin-left: auto;
+}
+
+.msg-bot {
+  background: #e5e7eb;
+  margin-right: auto;
+  color: #111;
+}
+.dark .msg-bot {
+  background: #374151;
+  color: #ddd;
+}
+
+
+.session-item {
+  padding: .5rem .7rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.session-item:hover {
+  background: #e5e7eb;
+}
+.dark .session-item:hover {
+  background: #4b5563;
+}
+
+.session-active {
+  background: #bfdbfe;
+  color: #1e40af;
+}
+.dark .session-active {
+  background: #1e3a8a;
+  color: white;
+}

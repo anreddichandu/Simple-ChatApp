@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MUST COME LAST — OR NOTHING WILL APPLY */
+@import './styles/chat-theme.css';

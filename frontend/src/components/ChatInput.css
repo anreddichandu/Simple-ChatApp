@@ -1,0 +1,14 @@
+/* Remove outline when typing */
+.chat-input:focus {
+  outline: none !important;
+}
+
+/* Send button hover */
+
+.chat-send-btn {
+  transition: 0.2s;
+}
+
+.chat-send-btn:hover {
+  transform: scale(1.05);
+}

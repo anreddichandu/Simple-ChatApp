@@ -1,0 +1,83 @@
+/* Smooth scrolling everywhere */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide default scrollbars (show thin, clean ones) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Chat message fade animation */
+.chat-fade-in {
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Chat smooth scroll area */
+.chat-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Input focus */
+.chat-input:focus {
+  outline: none !important;
+}
+
+/* Button hover */
+.chat-send-btn,
+.feedback-btn,
+.theme-btn {
+  transition: 0.2s ease;
+}
+
+.chat-send-btn:hover,
+.feedback-btn:hover,
+.theme-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Table container */
+.table-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Light scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.4);
+  border-radius: 4px;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.2s, color 0.2s;
+}
