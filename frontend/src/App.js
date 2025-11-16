@@ -65,8 +65,9 @@ function ShellLayout() {
           <Routes>
             
             <Route path="/" element={<LandingRoute />} />
-            
+            <Route path="/chat" element={<LandingRoute />} />
             <Route path="/chat/:sessionId" element={<ChatRoute />} />
+            <Route path="*" element={<LandingRoute />} />
           </Routes>
         </main>
       </div>
