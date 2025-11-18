@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaPlus, FaSearch } from "react-icons/fa";
 import { BiMessageRounded } from "react-icons/bi";
 
-const API = "https://your-render-url.onrender.com";
+const API = "https://simple-chatapp-1.onrender.com";
 
 
 const Sidebar = () => {
