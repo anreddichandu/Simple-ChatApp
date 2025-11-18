@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaPlus, FaSearch } from "react-icons/fa";
 import { BiMessageRounded } from "react-icons/bi";
 
-const API = "http://localhost:5000";
+const API = "https://your-render-url.onrender.com";
+
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
