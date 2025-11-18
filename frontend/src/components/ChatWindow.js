@@ -9,8 +9,10 @@ function ChatWindow() {
   const [messages, setMessages] = useState([]);
   const [tableData, setTableData] = useState([]);
 
+  const API = "https://simple-chatapp-1.onrender.com";
+
   const loadHistory = async () => {
-    const res = await fetch(`http://localhost:5000/api/session/${sessionId}`);
+    const res = await fetch(`${API}/api/session/${sessionId}`);
     const data = await res.json();
     setMessages(data.history || []);
   };
@@ -24,47 +26,52 @@ function ChatWindow() {
     setMessages((prev) => [...prev, userMessageObj]);
 
     try {
-      const res = await fetch(`http://localhost:5000/api/chat/${sessionId}`, {
+      const res = await fetch(`${API}/api/chat/${sessionId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: userMessage }),
       });
 
       if (!res.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
 
       const data = await res.json();
-      
-      
-      setMessages((prev) => [...prev, { role: "assistant", text: data.response }]);
-      
+
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", text: data.response }
+      ]);
+
       if (data.table && data.table.length > 0) {
         setTableData(data.table);
       } else {
         setTableData([]);
       }
     } catch (error) {
-      console.error('Error sending message:', error);
-      
-      setMessages((prev) => [...prev, { 
-        role: "assistant", 
-        text: "Sorry, I encountered an error processing your request. Please try again." 
-      }]);
+      console.error("Error sending message:", error);
+
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          text: "Sorry, I encountered an error processing your request. Please try again."
+        }
+      ]);
       setTableData([]);
     }
   }
 
   return (
     <div className="flex flex-col h-full bg-gray-50 dark:bg-[#111827]">
-
-      
       <div className="flex-1 overflow-auto flex justify-center px-4 py-6">
         <div className="w-full max-w-3xl space-y-6">
           {messages.map((msg, i) => (
             <div
               key={i}
-              className={`w-full ${msg.role === "user" ? "text-right" : "text-left"}`}
+              className={`w-full ${
+                msg.role === "user" ? "text-right" : "text-left"
+              }`}
             >
               <div
                 className={`inline-block px-4 py-2 rounded-lg shadow-sm ${
@@ -75,14 +82,17 @@ function ChatWindow() {
               >
                 {msg.text}
               </div>
-              {i === messages.length - 1 && msg.role === "assistant" && tableData.length > 0 && (
-                <div className="mt-4">
-                  <TableResponse table={tableData} />
-                  <div className="mt-2">
-                    <AnswerFeedback />
+
+              {i === messages.length - 1 &&
+                msg.role === "assistant" &&
+                tableData.length > 0 && (
+                  <div className="mt-4">
+                    <TableResponse table={tableData} />
+                    <div className="mt-2">
+                      <AnswerFeedback />
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
             </div>
           ))}
         </div>
