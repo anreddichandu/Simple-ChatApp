@@ -80,14 +80,15 @@ function LandingRoute() {
   const navigate = useNavigate();
 
   const handleStartChat = async () => {
-    try {
-      const res = await fetch('http://localhost:5000/api/new-chat');
-      const data = await res.json();
-      navigate(`/chat/${data.id}`);
-    } catch (e) {
-      console.error('Failed to start new chat', e);
-    }
-  };
+  try {
+    const res = await fetch('https://simple-chatapp-1.onrender.com/api/new-chat');
+    const data = await res.json();
+    navigate(`/chat/${data.id}`);
+  } catch (e) {
+    console.error('Failed to start new chat', e);
+  }
+};
+
 
   return (
     <div className="h-full flex items-center justify-center px-0">
